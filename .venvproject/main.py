@@ -7,12 +7,30 @@ todos = [text1, text2, text3]
 
 print(todos) """
 
+# todos = []
+# what_ToDo = "Enter a todo: "
+
+
+
+# while True:
+#     todo = input(what_ToDo)
+#     todos.append(todo)
+#     print(todos)
+
+#improved version of MATCH CASE integrating FOR LOOp
 todos = []
-what_ToDo = "Enter a todo: "
-
-
 
 while True:
-    todo = input(what_ToDo)
-    todos.append(todo)
-    print(todos)
+    user_action = input("Select action: Add, Show, or Exit: ")
+
+    match user_action:
+        case 'add':
+            todo = input("Enter todo item: ")
+            todos.append(todo)
+        case 'show':
+            for item in todos:
+                print(item)
+        case 'exit':
+            break
+
+print("Bye!")
